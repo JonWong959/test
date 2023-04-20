@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+  }
+.search-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+input[type="text"] {
+    border: none;
+    padding: 8px;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    width: 70%;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: darkred;
+}
+
+.content {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    margin: 8px;
+}
+
+.waterfall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 280px;
+}
+
+.card-image {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.5;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+a.active {
+    color: #f00;
+}
+
+span {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+span.fa-plus {
+    font-size: 32px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    background-color: #f00;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}

@@ -153,3 +153,121 @@ span.fa-plus {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-author {
+    color: #666;
+    margin-top: 10px;
+}
+
+.content {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.content-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.content-text {
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-icons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: color 0.2s;
+}
+
+.social-icons button:hover {
+    color: #f00;
+}
+
+.social-icons button i {
+    margin-right: 5px;
+}
+
+.social-icons button span {
+    margin-left: 5px;
+}
+
+
+
+.comment-box {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.comment-box h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.comment-box form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.comment-box form input[type="text"],
+.comment-box form input[type="email"],
+.comment-box form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.comment-box form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.comment-box form button:hover {
+    background-color: #0062cc;
+}

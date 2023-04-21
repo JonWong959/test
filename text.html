@@ -1,49 +1,96 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>示例网页</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./view/css/test.css">
-  </head>
-  <body>
-    <div class="topbar">
-      <input type="text" placeholder="搜索">
-    </div>
-    <div class="content">
-      <div class="waterfall">
-        <div class="item">
-          <img src="https://via.placeholder.com/400x300" alt="">
-          <div class="text">这里是图片描述</div>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/400x300" alt="">
-          <div class="text">这里是图片描述</div>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/400x300" alt="">
-          <div class="text">这里是图片描述</div>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/400x300" alt="">
-          <div class="text">这里是图片描述</div>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/400x300" alt="">
-          <div class="text">这里是图片描述</div>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/400x300" alt="">
-          <div class="text">这里是图片描述</div>
-        </div>
-      </div>
-    </div>
-    <div class="bottombar">
-      <div class="tab active">推荐</div>
-      <div class="tab">关注</div>
-      <div class="tab">附近</div>
-      <div class="tab">同城</div>
-      <div class="tab">视频</div>
-    </div>
-  </body>
-</html>
+<head>
+	<meta charset="UTF-8">
+	<title>Article Details</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		p {
+			line-height: 30px;
+			margin: 25px 0;
+		}
+
+		form {
+			padding: 25px;
+			border: none;
+			background-color: #f7f7f7;
+			max-width: 60%;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+			margin: auto;
+			transition: border-radius 0.2s ease-out;
+		}
+
+		button[type=submit] {
+			background-color: lightgreen;
+			border: none;
+			border-radius: 4px;
+			padding: 10px 25px;
+			cursor: pointer;
+		}
+
+		img {
+			vertical-align: middle;
+			margin: 0 15px 15px 0;
+			object-fit: cover;
+			width: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1><a href="#"><%= title %></a></h1>
+		</header>
+	</div>
+
+	<section class="article">
+		<article>
+			<%= content %>
+			<hr/>
+		</article>
+	</section>
+
+	<footer>
+		<aside>
+			<form action="/comments" method="post" accept-charset="utf-8">
+				<input name="comment" placeholder="Enter comment here..."/>
+				<input type="hidden" name="article_id" value="<%= id %>"/>
+				<button type="submit">Submit Comment</button>
+			</form>
+		</aside>
+
+		<aside>
+			<button onclick="window.location='https://twitter.com/?url=https%3A//example.com/article/%X&via=%x'" style="background-color: lightblue;">Tweet this Article</button>&nbsp;&nbsp;
+			<button onclick="like()" style="background-color: lightgreen;">Like this Article</button>
+		</aside>
+	</footer>
+
+	<script>
+	function like() {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+		    if (xhr.readyState === 4) {
+		        var response = JSON.parse(xhr.responseText);
+					if (response.success) {
+						document.getElementById("likes").innerHTML += "<span>Likes: <%= likesCount + 1 %> </span>";
+				} else {
+					alert("Error occurred while adding Like.");
+				}
+		    }
+	  };
+		  xhr.open('POST', '/api/v1/articles/<%= id %>/like');
+		  document.getElementById("js-like-btn").setAttribute("disabled", true);
+		  xhr.send();
+		};
+	
+	</script>
+</body>
+</html>```
